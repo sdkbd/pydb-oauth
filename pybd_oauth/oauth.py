@@ -10,7 +10,7 @@ class Oauth(BaseBaidu):
     def __init__(self):
         super(Oauth, self).__init__()
         # 引导用户完成授权获取code, Refer: https://xiongzhang.baidu.com/open/wiki/chapter2/section2.1.html?t=1540208308867
-        self.BAIDU_OAUTH2_AUTHORIZE = self.OPENAPI + 'oauth/2.0/authorize?response_type=code&client_id={appid}&redirect_uri={redirect_uri}&scope={scope}&pass_no_login={pass_no_login}&state={state}'
+        self.BAIDU_OAUTH2_AUTHORIZE = self.OPENAPI + '/oauth/2.0/authorize?response_type=code&client_id={appid}&redirect_uri={redirect_uri}&scope={scope}&pass_no_login={pass_no_login}&state={state}'
         # 获取网页授权access_token, Refer: https://xiongzhang.baidu.com/open/wiki/chapter2/section2.2.html?t=1540208308867
         self.BAIDU_OAUTH2_ACCESS_TOKEN = self.OPENAPI + '/oauth/2.0/token?grant_type=authorization_code&code={code}&client_id={appid}&client_secret={secret}&redirect_uri={redirect_uri}'
         # 获取授权用户信息, Refer: https://xiongzhang.baidu.com/open/wiki/chapter2/section2.4.html?t=1540208308867
