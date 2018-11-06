@@ -9,8 +9,8 @@ version = '1.0.0'
 setup(
     name='pybd-oauth',
     version=version,
-    keywords='Wechat Weixin Oauth Oauth2',
-    description='Wechat Oauth Module for Python.',
+    keywords='Baidu XiongZhang Oauth Oauth2',
+    description='Baidu XiongZhang Oauth Module for Python.',
     long_description=open('README.rst').read(),
 
     url='https://github.com/sdkwe/pybd-oauth',
@@ -20,7 +20,7 @@ setup(
 
     packages=['pybd_oauth'],
     py_modules=[],
-    install_requires=['pybd_base>=1.0.7', 'shortuuid'],
+    install_requires=['pybd_base>=1.0.1', 'shortuuid'],
 
     classifiers=[
         "License :: OSI Approved :: BSD License",
