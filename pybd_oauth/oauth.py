@@ -23,7 +23,7 @@ class Oauth(BaseBaidu):
         # 拉取用户信息（需要scope为snsapi_userinfo）, Refer: https://xiongzhang.baidu.com/open/wiki/chapter5/section5.4.4.html?t=1540208308867
         self.BAIDU_COMPONENT_OAUTH2_USERINFO = self.OPENAPI + '/rest/2.0/cambrian/sns/userinfo?access_token={access_token}&openid={openid}'
 
-    def get_oauth_code_url(self, appid=None, redirect_uri=None, scope='snsapi_base', pass_no_login=0, redirect_url=None, component=False, component_appid=None):
+    def get_oauth_code_url(self, appid=None, redirect_uri=None, scope='snsapi_base', redirect_url=None, pass_no_login=0, component=False, component_appid=None):
         if component:
             return self.get_component_oauth_code_url(appid=appid, redirect_uri=redirect_uri, scope=scope, redirect_url=redirect_url, component_appid=component_appid)
         return self.BAIDU_OAUTH2_AUTHORIZE.format(
@@ -44,7 +44,7 @@ class Oauth(BaseBaidu):
             return self.get_component_userinfo(access_token=access_token, openid=openid)
         return self.get(self.BAIDU_OAUTH2_USERINFO, access_token=access_token, openid=openid)
 
-    def get_component_oauth_code_url(self, appid=None, redirect_uri=None, scope='snsapi_base', pass_no_login=0, redirect_url=None, component_appid=None):
+    def get_component_oauth_code_url(self, appid=None, redirect_uri=None, scope='snsapi_base', redirect_url=None, pass_no_login=0, component_appid=None):
         return self.BAIDU_COMPONENT_OAUTH2_AUTHORIZE.format(
             appid=appid,
             redirect_uri=urllib.quote_plus(redirect_uri),

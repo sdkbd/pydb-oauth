@@ -20,7 +20,7 @@ setup(
 
     packages=['pybd_oauth'],
     py_modules=[],
-    install_requires=['pybd_base>=1.0.1', 'shortuuid'],
+    install_requires=['pybd_base>=1.0.2', 'shortuuid'],
 
     classifiers=[
         "License :: OSI Approved :: BSD License",
